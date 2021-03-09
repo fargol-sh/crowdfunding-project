@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
@@ -7,24 +8,34 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
   <title>Frontend Mentor | Crowdfunding product page</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <!-- css -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  About
-  Discover
-  Get Started
+  <div id="container">
+    <div id="topNav">
+      <a class="homeTitle" href="#">crowdfund</a>
+      <div class="navItems">
+        <a class="navLinks" href="#">About</a>
+        <a class="navLinks" href="#">Discover</a>
+        <a class="navLinks" href="#">Get Started</a>
+      </div>
+    </div>
+    <div id="firstPart">
+      <h1 class="firstPartTitle">Mastercraft Bamboo Monitor Riser</h1>
+      <h3 class="firstPartDesc">A beautiful & handcrafted monitor stand to reduce neck and eye strain.</h2>
+      <button class="firstPartButton1" type="button" name="button">Back this project</button>
+      <button class="firstPartButton2" type="button" name="button">Bookmark</button>
+    </div>
+    <img class="firstPartImage" src="images/logo-mastercraft.svg" alt="">
+  </div>
+  <div class="">
 
-  Mastercraft Bamboo Monitor Riser
-  A beautiful & handcrafted monitor stand to reduce neck and eye strain.
-
-  Back this project
-  Bookmark
-
+  </div>
   $89,914 of $100,000 backed
   5,007 total backers
   56 days left
@@ -115,4 +126,5 @@
 
   <!-- Success modal end -->
 </body>
+
 </html>

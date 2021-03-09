@@ -1,0 +1,120 @@
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+body{
+  margin: 0;
+  background-color: #f5f4f4;
+}
+#container{
+  position: relative;
+  background-position: center;
+}
+#topNav{
+  background-image: url("images/image-hero-desktop.jpg");
+  height : 400px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position : center;
+  position: absolute;
+}
+.homeTitle{
+  font-family: "Commissioner";
+  color : white;
+  font-weight: bold;
+  font-size: 1.6rem;
+  text-decoration: none;
+  padding-top: 45px;
+  padding-left: 130px;
+  display: inline-block;
+}
+.navItems{
+  float: right;
+  padding-top: 50px;
+  padding-right: 100px;
+}
+.navLinks {
+  font-family: "Commissioner";
+  color : white;
+  text-decoration: none;
+  margin: 30px;
+}
+#firstPart{
+   background-color: white;
+   position: absolute;
+   border-style: solid;
+   border-radius: 5px;
+   border-color: white;
+   text-align: center;
+   top: 350px;
+   left: 380px;
+}
+.firstPartImage{
+  position: absolute;
+  left: 660px;
+  top: 320px;
+}
+.firstPartTitle{
+  font-family: "Commissioner";
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 30px;
+}
+.firstPartDesc{
+  padding-left: 50px;
+  padding-right: 50px;
+}
+h3{
+  font-family: "Commissioner";
+  font-size: 1rem;
+  font-weight: normal;
+}
+.firstPartButton1{
+  float: left;
+  width: 200px;
+  height: 57px;
+  font-size: 16px;
+  color: white;
+  font-family: "Commissioner";
+  font-weight: bold;
+  border: solid hsl(176, 50%, 47%) 1px;
+  border-radius: 30px;
+  background-color: hsl(176, 50%, 47%);
+  text-decoration: none;
+  margin: 40px;
+  cursor: pointer;
+}
+.firstPartButton1:hover{
+   background: hsl(176, 72%, 28%);
+   border: solid hsl(176, 72%, 28%) 1px;
+   -webkit-border-radius: 30px;
+   -moz-border-radius: 30px;
+   border-radius: 30px;
+   text-decoration: none;
+}
+.firstPartButton2{
+  float: right;
+  width: 190px;
+  height: 57px;
+  font-size: 16px;
+  color: hsl(0, 0%, 48%);
+  font-family: "Commissioner";
+  font-weight: bold;
+  border: solid  #f5f4f4 1px;
+  border-radius: 30px;
+  text-decoration: none;
+  margin: 40px;
+  cursor: pointer;
+  background: #E1E1E1 url("images/icon-bookmark.svg") no-repeat;
+  padding-left: 35px;
+}
+.firstPartButton2:hover{
+   background: hsl(0, 0%, 48%) url("images/icon-bookmark.svg") no-repeat;
+   border: solid hsl(0, 0%, 48%) 1px;
+   -webkit-border-radius: 30px;
+   -moz-border-radius: 30px;
+   border-radius: 30px;
+   text-decoration: none;
+   color: white;
+}
