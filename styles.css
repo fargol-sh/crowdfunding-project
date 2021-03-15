@@ -13,9 +13,10 @@ body{
   height : 400px;
   width: 100%;
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: 100% 100%;
   background-position : center;
   position: absolute;
+
 }
 .homeTitle{
   font-family: "Commissioner";
@@ -38,15 +39,15 @@ body{
   text-decoration: none;
   margin: 30px;
 }
-#firstPart{
+.firstPart{
    background-color: white;
    position: absolute;
-   border-style: solid;
-   border-radius: 5px;
-   border-color: white;
+   border-radius: 8px;
+   border: solid #E1E1E1 1px;
    text-align: center;
    top: 350px;
-   left: 380px;
+   left: 366px;
+   width: 640px;
 }
 .firstPartImage{
   position: absolute;
@@ -69,6 +70,7 @@ h3{
   font-family: "Commissioner";
   font-size: 1rem;
   font-weight: normal;
+  color: hsl(0, 0%, 48%);
 }
 .firstPartButton1{
   float: left;
@@ -106,7 +108,7 @@ h3{
   text-decoration: none;
   margin: 40px;
   cursor: pointer;
-  background: #E1E1E1 url("images/icon-bookmark.svg") no-repeat;
+  background: #EAEAEA url("images/icon-bookmark.svg") no-repeat;
   padding-left: 35px;
 }
 .firstPartButton2:hover{
@@ -117,4 +119,143 @@ h3{
    border-radius: 30px;
    text-decoration: none;
    color: white;
+}
+.secondPart{
+  background-color: white;
+  position: absolute;
+  border-radius: 8px;
+  border: solid #E1E1E1 1px;
+  top: 640px;
+  left: 366px;
+  width: 640px;
+}
+.secondPartDiv1 , .secondPartDiv2, .secondPartDiv3{
+  display: inline-block;
+  margin: 31px;
+  height: 70px;
+}
+.secondPartDiv1 , .secondPartDiv2{
+  border-right: solid #D7D7D7 1px;
+  padding-right: 40px;
+  margin-right: 0px;
+}
+.secondPartPrices{
+  font-family: "Commissioner";
+  font-weight: bold;
+  font-size: 1.7rem;
+  margin-top: 0px;
+  margin-bottom: 4px;
+}
+.secondPartPrices2{
+  margin-top: 0px;
+}
+.secondPartProgressBar{
+  height: 16px;
+  width: 569px;
+  position: relative;
+  background: #E1E1E1;
+  border-radius: 25px;
+  margin: 5px 20px 40px 20px;
+}
+.progressBar{
+  display: block;
+  height: 100%;
+  width: 75%;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  background-color: hsl(176, 50%, 47%);
+  position: relative;
+  overflow: hidden;
+}
+.thirdPart{
+  background-color: white;
+  position: absolute;
+  border-radius: 8px;
+  border: solid #E1E1E1 1px;
+  top: 860px;
+  left: 366px;
+  width: 640px;
+}
+h2{
+  font-family: "Commissioner";
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding-left: 35px;
+  padding-right: 20px;
+  padding-top: 20px;
+}
+.thirdPartDesc{
+  padding: 5px 30px 10px 35px;
+  line-height: 30px;
+}
+.thirdPartSec1, .thirdPartSec2, .thirdPartSec3{
+  background-color: white;
+  border-radius: 8px;
+  border: solid #E1E1E1 1px;
+  margin: 30px;
+}
+.thirdPartSecTitle{
+  font-family: "Commissioner";
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: inline-block;
+}
+.thirdPartLink{
+  font-family: "Commissioner";
+  font-size: 1rem;
+  font-weight: 500;
+  color: #37BBBF;
+  text-decoration: none;
+  float: right;
+  padding-top: 40px;
+  padding-right: 30px;
+}
+.thirdPartSecDesc{
+  padding: 5px 30px 0 35px;
+  line-height: 30px;
+}
+.thirdPartLeft1{
+  margin-left: 34px;
+  margin-bottom: 40px;
+  margin-top: 7px;
+  display: inline-block;
+}
+.thirdPartLeft2{
+  font-family: "Commissioner";
+  font-weight: bold;
+  font-size: 1.7rem;
+  color: Black;
+  padding-right: 10px;
+}
+.thirdPartButton1, .thirdPartButton2, .thirdPartButton3{
+  width: 160px;
+  height: 45px;
+  font-size: 14px;
+  color: white;
+  font-family: "Commissioner";
+  font-weight: bold;
+  border: solid hsl(176, 50%, 47%) 1px;
+  border-radius: 30px;
+  background-color: hsl(176, 50%, 47%);
+  text-decoration: none;
+  cursor: pointer;
+  float: right;
+  margin-right: 25px;
+  margin-top: 5px;
+}
+.thirdPartButton1:hover, .thirdPartButton2:hover, .thirdPartButton3:hover{
+  background: hsl(176, 72%, 28%);
+  border: solid hsl(176, 72%, 28%) 1px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  text-decoration: none;
+}
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [id="container"] {
+    width: 100%;
+  }
 }
