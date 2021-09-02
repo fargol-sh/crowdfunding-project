@@ -1,261 +1,166 @@
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
-body{
+/* BASE SETUP */
+*,
+*::after,
+*::before {
   margin: 0;
-  background-color: #f5f4f4;
+  padding: 0;
+  box-sizing: inherit;
 }
-#container{
-  position: relative;
-  background-position: center;
-}
-#topNav{
-  background-image: url("images/image-hero-desktop.jpg");
-  height : 400px;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-position : center;
-  position: absolute;
 
+html {
+  font-size: 100%;
 }
-.homeTitle{
-  font-family: "Commissioner";
-  color : white;
-  font-weight: bold;
+
+body {
+  box-sizing: border-box;
+  background-color: #eee;
+  position: relative;
+}
+
+h1 {
+  font-family: 'Commissioner';
+  font-weight: 700;
   font-size: 1.6rem;
-  text-decoration: none;
-  padding-top: 45px;
-  padding-left: 130px;
-  display: inline-block;
 }
-.navItems{
-  float: right;
-  padding-top: 50px;
-  padding-right: 100px;
-}
-.navLinks {
-  font-family: "Commissioner";
-  color : white;
-  text-decoration: none;
-  margin: 30px;
-}
-.firstPart{
-   background-color: white;
-   position: absolute;
-   border-radius: 8px;
-   border: solid #E1E1E1 1px;
-   text-align: center;
-   top: 350px;
-   left: 366px;
-   width: 640px;
-}
-.firstPartImage{
-  position: absolute;
-  left: 660px;
-  top: 320px;
-}
-.firstPartTitle{
-  font-family: "Commissioner";
-  font-weight: bold;
-  font-size: 1.5rem;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 30px;
-}
-.firstPartDesc{
-  padding-left: 50px;
-  padding-right: 50px;
-}
-h3{
-  font-family: "Commissioner";
+
+h3 {
+  font-family: 'Commissioner';
+  font-weight: 400;
   font-size: 1rem;
-  font-weight: normal;
+}
+
+.cta:link,
+.cta:visited {
+  text-decoration: none;
+  font-family: "Commissioner";
+  font-weight: 700;
+  font-size: .9rem;
+  border-radius: 10rem;
+  border: none;
+  padding: 1rem 2.4rem;
+  display: inline-block;
+  transition: all .2s;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(-35%);
+}
+/* HEADER */
+.header {
+  height: 60vh;
+  background-image: url(images/image-hero-desktop.jpg);
+  background-size: cover;
+  position: relative;
+}
+
+.heading {
+  position: absolute;
+  top: 10%;
+  left: 11.5%;
+}
+
+.heading-text {
+  color: #fff;
+}
+
+.navigation {
+  display: flex;
+  width: 40%;
+  float: right;
+  justify-content: space-around;
+  transform: translate(-2.5rem, 2.9rem);
+}
+
+/*
+.nav-item {
+} */
+
+.nav-item__text {
+  font-family: 'Commissioner';
+  font-weight: 400;
+  font-size: 1rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* FEATURES */
+.features {
+  border: 1px solid #DCDCDC;
+  border-radius: .5rem;
+  background-color: #fff;
+  text-align: center;
+  width: 50%;
+}
+
+.features__icon-box {
+  transform: translateY(-50%);
+}
+
+.features__content {
+  margin-bottom: 2rem;
+}
+
+.features__text-box {
+  margin: 0 2rem 2.5rem 2rem;
+}
+
+.features__heading {
+  margin-bottom: 1rem;
+}
+
+.features__text {
   color: hsl(0, 0%, 48%);
 }
-.firstPartButton1{
+
+.cta__back-this-project {
+  height: 3.5rem;
+  background-color: hsl(176, 50%, 47%);
+  color: #fff;
   float: left;
-  width: 200px;
-  height: 57px;
-  font-size: 16px;
-  color: white;
-  font-family: "Commissioner";
-  font-weight: bold;
-  border: solid hsl(176, 50%, 47%) 1px;
-  border-radius: 30px;
-  background-color: hsl(176, 50%, 47%);
-  text-decoration: none;
-  margin: 40px;
-  cursor: pointer;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
 }
-.firstPartButton1:hover{
-   background: hsl(176, 72%, 28%);
-   border: solid hsl(176, 72%, 28%) 1px;
-   -webkit-border-radius: 30px;
-   -moz-border-radius: 30px;
-   border-radius: 30px;
-   text-decoration: none;
+
+.cta__back-this-project:hover {
+  background-color: hsl(176, 72%, 28%);
+  color: #fff;
 }
-.firstPartButton2{
-  float: right;
-  width: 190px;
-  height: 57px;
-  font-size: 16px;
+
+.cta__bookmark {
+  height: 3.5rem;
+  width: 12rem;
+  text-align: right;
+  background-color: #eee;
   color: hsl(0, 0%, 48%);
-  font-family: "Commissioner";
-  font-weight: bold;
-  border: solid  #f5f4f4 1px;
-  border-radius: 30px;
-  text-decoration: none;
-  margin: 40px;
-  cursor: pointer;
-  background: #EAEAEA url("images/icon-bookmark.svg") no-repeat;
-  padding-left: 35px;
 }
-.firstPartButton2:hover{
-   background: hsl(0, 0%, 48%) url("images/icon-bookmark.svg") no-repeat;
-   border: solid hsl(0, 0%, 48%) 1px;
-   -webkit-border-radius: 30px;
-   -moz-border-radius: 30px;
-   border-radius: 30px;
-   text-decoration: none;
-   color: white;
-}
-.secondPart{
-  background-color: white;
-  position: absolute;
-  border-radius: 8px;
-  border: solid #E1E1E1 1px;
-  top: 640px;
-  left: 366px;
-  width: 640px;
-}
-.secondPartDiv1 , .secondPartDiv2, .secondPartDiv3{
+
+.features__bookmark {
   display: inline-block;
-  margin: 31px;
-  height: 70px;
-}
-.secondPartDiv1 , .secondPartDiv2{
-  border-right: solid #D7D7D7 1px;
-  padding-right: 40px;
-  margin-right: 0px;
-}
-.secondPartPrices{
-  font-family: "Commissioner";
-  font-weight: bold;
-  font-size: 1.7rem;
-  margin-top: 0px;
-  margin-bottom: 4px;
-}
-.secondPartPrices2{
-  margin-top: 0px;
-}
-.secondPartProgressBar{
-  height: 16px;
-  width: 569px;
   position: relative;
-  background: #E1E1E1;
-  border-radius: 25px;
-  margin: 5px 20px 40px 20px;
+  float: right;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
 }
-.progressBar{
-  display: block;
-  height: 100%;
-  width: 75%;
-  border-top-right-radius: 25px;
-  border-bottom-right-radius: 25px;
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
-  background-color: hsl(176, 50%, 47%);
-  position: relative;
-  overflow: hidden;
+
+.features__bookmark:hover :not(:first-child) {
+  filter: brightness(250%);
 }
-.thirdPart{
-  background-color: white;
+
+.features__bookmark-icon {
   position: absolute;
-  border-radius: 8px;
-  border: solid #E1E1E1 1px;
-  top: 860px;
-  left: 366px;
-  width: 640px;
+  transform: translateX(-340%);
+  transition: all .2s;
 }
-h2{
-  font-family: "Commissioner";
-  font-weight: bold;
-  font-size: 1.3rem;
-  padding-left: 35px;
-  padding-right: 20px;
-  padding-top: 20px;
-}
-.thirdPartDesc{
-  padding: 5px 30px 10px 35px;
-  line-height: 30px;
-}
-.thirdPartSec1, .thirdPartSec2, .thirdPartSec3{
-  background-color: white;
-  border-radius: 8px;
-  border: solid #E1E1E1 1px;
-  margin: 30px;
-}
-.thirdPartSecTitle{
-  font-family: "Commissioner";
-  font-weight: bold;
-  font-size: 1.2rem;
-  display: inline-block;
-}
-.thirdPartLink{
-  font-family: "Commissioner";
-  font-size: 1rem;
-  font-weight: 500;
-  color: #37BBBF;
-  text-decoration: none;
-  float: right;
-  padding-top: 40px;
-  padding-right: 30px;
-}
-.thirdPartSecDesc{
-  padding: 5px 30px 0 35px;
-  line-height: 30px;
-}
-.thirdPartLeft1{
-  margin-left: 34px;
-  margin-bottom: 40px;
-  margin-top: 7px;
-  display: inline-block;
-}
-.thirdPartLeft2{
-  font-family: "Commissioner";
-  font-weight: bold;
-  font-size: 1.7rem;
-  color: Black;
-  padding-right: 10px;
-}
-.thirdPartButton1, .thirdPartButton2, .thirdPartButton3{
-  width: 160px;
-  height: 45px;
-  font-size: 14px;
-  color: white;
-  font-family: "Commissioner";
-  font-weight: bold;
-  border: solid hsl(176, 50%, 47%) 1px;
-  border-radius: 30px;
-  background-color: hsl(176, 50%, 47%);
-  text-decoration: none;
-  cursor: pointer;
-  float: right;
-  margin-right: 25px;
-  margin-top: 5px;
-}
-.thirdPartButton1:hover, .thirdPartButton2:hover, .thirdPartButton3:hover{
-  background: hsl(176, 72%, 28%);
-  border: solid hsl(176, 72%, 28%) 1px;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  border-radius: 30px;
-  text-decoration: none;
-}
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  [id="container"] {
-    width: 100%;
-  }
-}
+
+
+
+
+
+
+
+
+
+/**/
