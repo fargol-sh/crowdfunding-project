@@ -23,6 +23,12 @@ h1 {
   font-size: 1.6rem;
 }
 
+h2 {
+  font-family: 'Commissioner';
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
 h3 {
   font-family: 'Commissioner';
   font-weight: 400;
@@ -34,7 +40,7 @@ h3 {
   text-decoration: none;
   font-family: "Commissioner";
   font-weight: 700;
-  font-size: .9rem;
+  font-size: .95rem;
   border-radius: 10rem;
   border: none;
   padding: 1rem 2.4rem;
@@ -46,7 +52,7 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transform: translateY(-35%);
+  transform: translateY(-7%);
 }
 /* HEADER */
 .header {
@@ -93,6 +99,7 @@ h3 {
   background-color: #fff;
   text-align: center;
   width: 50%;
+  margin-bottom: 2.5rem;
 }
 
 .features__icon-box {
@@ -126,7 +133,6 @@ h3 {
 
 .cta__back-this-project:hover {
   background-color: hsl(176, 72%, 28%);
-  color: #fff;
 }
 
 .cta__bookmark {
@@ -155,12 +161,171 @@ h3 {
   transition: all .2s;
 }
 
+/* STATISTICS */
+.statistics {
+  border: 1px solid #DCDCDC;
+  border-radius: .5rem;
+  background-color: #fff;
+  width: 50%;
+  margin-bottom: 2.5rem;
+
+  display: flex;
+  flex-direction: column;
+}
 
 
+.statistics__box {
+  display: flex;
+  justify-content: space-around;
+}
 
+.statistics__box > :not(:first-child) {
+  border-left: 1px solid #DCDCDC;
+  padding-left: 2.8rem;
+  margin-left: 0;
+}
 
+.statistics__item {
+  margin: 2.5rem 0;
+}
 
+.statistics__item-text {
+  color: hsl(0, 0%, 48%);
+  margin-top: .5rem;
+}
 
+.statistics__progress-bar {
+  width: 90%;
+  background-color: #eee;
+  border-radius: 100rem;
+  height: .8rem;
+  margin: 0 auto 2rem auto;
+}
 
+.statistics__user-progress {
+  width: 80%;
+  background-color: hsl(176, 50%, 47%);
+  border-radius: 100rem;
+  height: .8rem;
+  animation: progress 3s 2s;
+}
+
+@media (max-width: 1000px) {
+  .statistics__box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .statistics__box > :not(:first-child) {
+    border-top: 1px solid #DCDCDC;
+    border-left: 0;
+    padding: 1rem 0 0 0;
+    margin: 0 0 2rem 0;
+  }
+
+  .statistics__item {
+    text-align: center;
+    margin: 2rem 0;
+  }
+}
+
+/* ABOUT */
+.about {
+  border: 1px solid #DCDCDC;
+  border-radius: .5rem;
+  background-color: #fff;
+  width: 50%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.about__heading-box {
+  margin: 2rem;
+}
+
+.about__text-box {
+  margin: 0 2rem;
+  line-height: 1.8rem;
+}
+
+.about__text {
+  color: hsl(0, 0%, 48%);
+}
+
+.about__item {
+  border: .1px solid #CDCDCD;
+  border-radius: .5rem;
+  width: 90%;
+  align-self: center;
+  margin: 2rem 2rem 0 2rem;
+}
+
+.about > :last-child {
+  margin-bottom: 4rem;
+}
+
+.about__item--header {
+  margin: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-pledge {
+  text-decoration: none;
+  color: hsl(176, 50%, 47%);
+  font-family: "Commissioner";
+  font-weight: 500;
+  font-size: .95rem;
+  margin: .2rem .5rem;
+}
+
+.about__item--text-box {
+  margin: 1rem 2rem;
+}
+
+.about__item--text {
+  color: hsl(0, 0%, 48%);
+  line-height: 1.8rem;
+}
+
+.about__item--reward {
+  margin: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-number {
+  margin-top: .5rem;
+}
+.items-left {
+  font-family: 'Commissioner';
+  font-weight: 400;
+  font-size: 1rem;
+  color: hsl(0, 0%, 48%);
+}
+
+.cta__reward {
+  text-align: center;
+  width: 11rem;
+  height: 3.3rem;
+  background-color: hsl(176, 50%, 47%);
+  color: #fff;
+}
+
+.cta__reward:hover {
+  background-color: hsl(176, 72%, 28%);
+}
+
+/* ANIMATIONS */
+@keyframes progress {
+  0% {
+    width: 2%;
+  }
+
+  100% {
+    width: 80%;
+  }
+}
 
 /**/
