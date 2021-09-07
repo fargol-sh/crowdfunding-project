@@ -305,16 +305,43 @@ h3 {
   color: hsl(0, 0%, 48%);
 }
 
-.cta__reward {
+.cta__reward:link,
+.cta__reward:visited {
   text-align: center;
-  width: 11rem;
-  height: 3.3rem;
+  width: 10.5rem;
+  height: 3rem;
   background-color: hsl(176, 50%, 47%);
   color: #fff;
+  font-size: .8rem;
 }
 
 .cta__reward:hover {
   background-color: hsl(176, 72%, 28%);
+}
+
+/* OVERLAY */
+.btp-overlay {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  visibility: hidden; 
+  transition: all .3s;
+}
+
+.btp-overlay__content {
+  /* center the content */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 50%;
+  background-color: #fff;
+  border-radius: 3px;
+  opacity: 0;
+  transition: all .5s .2s;
 }
 
 /* ANIMATIONS */
