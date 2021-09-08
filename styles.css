@@ -326,23 +326,150 @@ h3 {
   width: 100%;
   top: 0;
   left: 0;
-  visibility: hidden; 
-  transition: all .3s;
+  visibility: hidden;
+  overflow-y: scroll;
+  transition: all .3s ease;
+
+  /* -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px); */
+  background-color: rgba(0, 0, 0, .3);
 }
 
 .btp-overlay__content {
-  /* center the content */
+  /* overflow: hidden; */
+  transform: translate(47%, 10%);
+
+  display: flex;
+  flex-direction: column;
+
+
+  width: 52%;
+  background-color: #fff;
+  border-radius: 3px;
+  opacity: 0;
+  transition: all .5s .2s ease-out;
+  padding-bottom: 3rem;
+  margin-bottom: 5rem;
+}
+
+.btp-overlay__icon {
+  position: absolute;
+  right: 2rem;
+  top: 2.2rem;
+}
+
+.btp-overlay__icon-close {
+
+}
+
+.btp-overlay__header {
+  margin: 2rem 2rem 0 2rem;
+}
+
+.btp-overlay__heading {
+  margin-bottom: 1.5rem;
+}
+
+.btp-overlay__header-text,
+.btp-overlay__item--text {
+  color: hsl(0, 0%, 48%);
+  font-size: .95rem;
+  line-height: 1.5rem;
+}
+
+.btp-overlay__item {
+  border: .1px solid #CDCDCD;
+  border-radius: .5rem;
+  width: 90%;
+  align-self: center;
+  margin: 2rem 2rem 0 2rem;
+  position: relative;
+}
+
+.btp-overlay__item--header {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.btp-item-pledge {
+  margin-top: 1.5rem;
+}
+.btp-overlay__item--radio-group {
+  margin-top: 1.5rem;
+  display: inline-block;
+}
+
+.btp-overlay__item--radio-input {
+  margin-left: 1.5rem;
+  display: none;
+}
+
+.btp-overlay__item--radio-label {
+  font-family: 'Commissioner';
+  font-size: 1rem;
+  font-weight: 700;
+  margin-left: 4.5rem;
+  margin-right: 1rem;
+  position: relative;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.btp-overlay__item--radio-label:hover  {
+  color: hsl(176, 50%, 47%);
+}
+
+.btp-overlay__item--radio-label:hover .btp-overlay__item--radio-button {
+  border-color: hsl(176, 50%, 47%);
+}
+
+.btp-overlay__item--radio-button {
+  height: 1.5rem;
+  width: 1.5rem;
+  border: 1px solid #CDCDCD;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  top: -.2rem;
+  left: -2.5rem;
+  transition: all .2s;
+}
+
+.btp-overlay__item--radio-button::after {
+  content: "";
+  display: block;
+  height: .8rem;
+  width: .8rem;
+  border-radius: 50%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  width: 50%;
-  background-color: #fff;
-  border-radius: 3px;
+  background-color: hsl(176, 50%, 47%);
   opacity: 0;
-  transition: all .5s .2s;
+  transition: opacity .2s ease;
 }
+
+.btp-overlay__item--radio-input:checked ~ .btp-overlay__item--radio-label .btp-overlay__item--radio-button:after {
+	opacity: 1;
+}
+
+.btp-overlay__item--radio-input:not(:checked) ~ .btp-overlay__item--radio-label .btp-overlay__item--radio-button:after {
+	opacity: 0;
+}
+
+.btp-overlay__item--number {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+}
+
+.btp-overlay__item--text-box {
+  margin-left: 4.5rem;
+  margin-right: 2rem;
+  margin-bottom: 1.5rem;
+}
+
 
 /* ANIMATIONS */
 @keyframes progress {
