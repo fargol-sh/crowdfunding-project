@@ -329,9 +329,7 @@ h3 {
   visibility: hidden;
   overflow-y: scroll;
   transition: all .3s ease;
-
-  /* -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px); */
+  padding-bottom: 5rem;
   background-color: rgba(0, 0, 0, .3);
 }
 
@@ -358,10 +356,6 @@ h3 {
   top: 2.2rem;
 }
 
-.btp-overlay__icon-close {
-
-}
-
 .btp-overlay__header {
   margin: 2rem 2rem 0 2rem;
 }
@@ -384,6 +378,7 @@ h3 {
   align-self: center;
   margin: 2rem 2rem 0 2rem;
   position: relative;
+  transition: all .6s;
 }
 
 .btp-overlay__item--header {
@@ -435,27 +430,25 @@ h3 {
   transition: all .2s;
 }
 
-.btp-overlay__item--radio-button::after {
+.btp-overlay__item--radio-button:after {
   content: "";
   display: block;
   height: .8rem;
   width: .8rem;
   border-radius: 50%;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 22%;
+  left: 23%;
+  /* transform: translate(-50%, -50%); */
   background-color: hsl(176, 50%, 47%);
   opacity: 0;
-  transition: opacity .2s ease;
+  transition: all .2s ease;
+  transform: scale(0);
 }
 
-.btp-overlay__item--radio-input:checked ~ .btp-overlay__item--radio-label .btp-overlay__item--radio-button:after {
+.btp-overlay__item--radio-input:checked + .btp-overlay__item--radio-label .btp-overlay__item--radio-button:after {
 	opacity: 1;
-}
-
-.btp-overlay__item--radio-input:not(:checked) ~ .btp-overlay__item--radio-label .btp-overlay__item--radio-button:after {
-	opacity: 0;
+  transform: scale(1);
 }
 
 .btp-overlay__item--number {
@@ -469,6 +462,71 @@ h3 {
   margin-right: 2rem;
   margin-bottom: 1.5rem;
 }
+
+.btp-overlay__item--footer {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  transform: scale(0);
+  border-top: .1px solid #CDCDCD;
+  transition: all .5s;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.btp-overlay__item--footer-textbox {
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btp-overlay__item--footer-text {
+  color: hsl(0, 0%, 48%);
+}
+
+.btp-overlay__item--footer-submit {
+  position: relative;
+  margin: 2rem 1.5rem 2rem 2rem;
+}
+
+.btp-overlay__item--footer-sign {
+  position: absolute;
+  transform: translate(1rem, .9rem);
+}
+
+.dollar-sign {
+  font-family: "Commissioner";
+  color: hsl(0, 0%, 48%);
+}
+
+.btp-overlay__item--footer-pledge {
+  font-family: "Commissioner";
+  color: black;
+  font-weight: 700;
+  border: .1px solid #CDCDCD;
+  border-radius: 100rem;
+  width: 6rem;
+  height: 3rem;
+  padding-left: 1.8rem;
+}
+
+.btp-overlay__item--footer-pledge::placeholder { color: black;}
+.btp-overlay__item--footer-button {
+  font-family: "Commissioner";
+  background-color: hsl(176, 50%, 47%);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 100rem;
+  width: 7rem;
+  height: 3rem;
+  transition: all .3s;
+  margin-left: .5rem;
+}
+
+.btp-overlay__item--footer-button:hover { background-color: hsl(176, 72%, 28%);}
 
 
 /* ANIMATIONS */
