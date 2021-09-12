@@ -36,7 +36,7 @@
     </div>
   </div>
 
-  <main class="main">
+  <main id="main" class="main">
     <section class="features">
       <div class="features__icon-box">
           <img src="images/logo-mastercraft.svg" alt="Crowdfunding logo">
@@ -57,16 +57,16 @@
     <section class="statistics">
       <div class="statistics__box">
         <div class="statistics__item">
-          <h1>$89,914</h1>
-          <h3 class="statistics__item-text">of $100,000 backed</h3>
+          <h1 class="statistics__item--raised-money">$89,914</h1>
+          <h3 class="statistics__item--text">of $100,000 backed</h3>
         </div>
         <div class="statistics__item">
-          <h1>5,007</h1>
-          <h3 class="statistics__item-text">total backers</h3>
+          <h1 class="statistics__item--total-backers">5,007</h1>
+          <h3 class="statistics__item--text">total backers</h3>
         </div>
         <div class="statistics__item">
           <h1>56</h1>
-          <h3 class="statistics__item-text">days left</h3>
+          <h3 class="statistics__item--text">days left</h3>
         </div>
       </div>
       <div class="statistics__progress-bar">
@@ -272,38 +272,18 @@
     </div>
   </section>
 
-
-  <!-- Selection modal start -->
-
-  <!-- Selected pledge start -->
-  Enter your pledge
-  $25
-  Continue
-  <!-- Selected pledge end -->
-
-
-  <!-- Selected pledge start -->
-  Enter your pledge
-  $75
-  Continue
-  <!-- Selected pledge end -->
-
-
-  <!-- Selected pledge  start -->
-  Enter your pledge
-  $200
-  Continue
-  <!-- Selected pledge end -->
-
-  <!-- Selection modal end -->
-
   <!-- Success modal start -->
-
-  Thanks for your support!
-  Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get
-  an email once our campaign is completed.
-  Got it!
-
+  <div class="success-modal">
+    <div class="success-modal__content">
+      <img src="images/icon-check.svg" alt="Check icon" class="success-modal__icon">
+      <h1 class="success-modal__heading">Thanks for your support!</h1>
+      <h3 class="success-modal__text">
+        Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get
+        an email once our campaign is completed.
+      </h3>
+      <a href="#" onClick="return false;" class="cta success-modal__btn">Got it!</a>
+    </div>
+  </div>
   <!-- Success modal end -->
 </body>
 </html>

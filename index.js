@@ -4,15 +4,26 @@ let btpOverlayContent = document.querySelector('.btp-overlay__content');
 let items = document.getElementsByClassName('btp-overlay__item');
 let radioBtns = document.getElementsByClassName('btp-overlay__item--radio-input');
 let itemFooter = document.getElementsByClassName('btp-overlay__item--footer');
+let continueBtns = document.getElementsByClassName('btp-overlay__item--footer-button');
+let inputPledge = document.querySelectorAll('.btp-overlay__item--footer-pledge');
+let raisedMoney = document.querySelector('.statistics__item--raised-money');
+let totalBackers = document.querySelector('.statistics__item--total-backers');
+let successModal = document.querySelector('.success-modal');
+let successModalContent = document.querySelector('.success-modal__content');
+let successModalBtn = document.querySelector('.success-modal__btn');
+
+
 
 const closeBtpHandler = function() {
   btpOverlay.style.visibility = 'hidden';
   btpOverlayContent.style.opacity = 0;
+  btpOverlayContent.style.transform = 'translate(47%, 10%) scale(0)';
 }
 
 const openBtpHandler = function() {
   btpOverlay.style.visibility = 'visible';
   btpOverlayContent.style.opacity = 1;
+  btpOverlayContent.style.transform = 'translate(47%, 10%) scale(1)';
 }
 
 const footerHandler = function() {
@@ -40,6 +51,34 @@ const footerHandler = function() {
   }
 }
 
+const openSuccessModalHandler = function() {
+  successModal.style.visibility = 'visible';
+  successModalContent.style.opacity = 1;
+  successModalContent.style.transform = 'translate(-50%, -50%) scale(1)';
+}
+
+const closeSuccessModalHandler = function() {
+  successModal.style.visibility = 'hidden';
+  successModalContent.style.opacity = 0;
+  successModalContent.style.transform = 'translate(-50%, -50%) scale(0)';
+}
+
+const footerBtnHandler = function() {
+  raisedMoney = toString(parseInt(raisedMoney) + parseInt(inputPledge));
+  totalBackers = toString(parseInt(totalBackers) + 1);
+  closeBtpHandler();
+  setTimeout(() => {
+    for(let n = 0; n < inputPledge.length; n++) {
+      inputPledge[n].value = '';
+    }
+    for(let j = 0; j < radioBtns.length; j++) {
+      radioBtns[j].checked = false;
+    }
+    footerHandler();
+    openSuccessModalHandler();
+  } , 500);
+}
+
 document.querySelector('.cta__back-this-project').addEventListener('click', openBtpHandler);
 
 document.querySelector('.btp-overlay__icon').addEventListener('click', closeBtpHandler);
@@ -48,3 +87,16 @@ for(let i = 0; i < radioBtns.length; i++)
 {
   radioBtns[i].addEventListener('click', footerHandler);
 }
+
+for(let k = 0; k < continueBtns.length; k++) {
+  continueBtns[k].addEventListener('click', footerBtnHandler);
+}
+
+successModalBtn.addEventListener('click', closeSuccessModalHandler);
+
+
+
+
+
+
+////
