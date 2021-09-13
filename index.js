@@ -63,9 +63,9 @@ const closeSuccessModalHandler = function() {
   successModalContent.style.transform = 'translate(-50%, -50%) scale(0)';
 }
 
-const footerBtnHandler = function() {
-  raisedMoney = toString(parseInt(raisedMoney) + parseInt(inputPledge));
-  totalBackers = toString(parseInt(totalBackers) + 1);
+const footerBtnHandler = function(k) {
+  raisedMoney.innerHTML = (parseInt(raisedMoney.innerHTML.replace(/[^0-9]/g, '')) + parseInt(inputPledge[k].value)).toString();
+  totalBackers.innerHTML = (parseInt(totalBackers.innerHTML.replace(/[^0-9]/g, '')) + 1).toString();
   closeBtpHandler();
   setTimeout(() => {
     for(let n = 0; n < inputPledge.length; n++) {
@@ -89,7 +89,7 @@ for(let i = 0; i < radioBtns.length; i++)
 }
 
 for(let k = 0; k < continueBtns.length; k++) {
-  continueBtns[k].addEventListener('click', footerBtnHandler);
+  continueBtns[k].addEventListener('click', footerBtnHandler.bind(this, k));
 }
 
 successModalBtn.addEventListener('click', closeSuccessModalHandler);
