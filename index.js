@@ -15,12 +15,14 @@ let successModalBtn = document.querySelector('.success-modal__btn');
 
 
 const closeBtpHandler = function() {
+  btpOverlay.style.opacity = 0;
   btpOverlay.style.visibility = 'hidden';
   btpOverlayContent.style.opacity = 0;
-  btpOverlayContent.style.transform = 'translate(47%, 10%) scale(0)';
+  btpOverlayContent.style.transform = 'translate(47%, 10%) scale(.95)';
 }
 
 const openBtpHandler = function() {
+  btpOverlay.style.opacity = 1;
   btpOverlay.style.visibility = 'visible';
   btpOverlayContent.style.opacity = 1;
   btpOverlayContent.style.transform = 'translate(47%, 10%) scale(1)';
@@ -64,7 +66,7 @@ const closeSuccessModalHandler = function() {
 }
 
 const footerBtnHandler = function(k) {
-  raisedMoney.innerHTML = (parseInt(raisedMoney.innerHTML.replace(/[^0-9]/g, '')) + parseInt(inputPledge[k].value)).toString();
+  raisedMoney.innerHTML = '$' + (parseInt(raisedMoney.innerHTML.replace(/[^0-9]/g, '')) + parseInt(inputPledge[k].value)).toString();
   totalBackers.innerHTML = (parseInt(totalBackers.innerHTML.replace(/[^0-9]/g, '')) + 1).toString();
   closeBtpHandler();
   setTimeout(() => {
