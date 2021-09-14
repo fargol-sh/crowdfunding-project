@@ -72,6 +72,20 @@ h3 {
   color: #fff;
 }
 
+.sidebar {
+  position: absolute;
+  top: 11%;
+  right: 10%;
+  display: none;
+  cursor: pointer;
+}
+
+.sidebar-icon {
+  fill: #fff;
+  width: 2rem;
+  height: 2rem;
+}
+
 .navigation {
   display: flex;
   width: 40%;
@@ -603,10 +617,11 @@ h3 {
   html {
     font-size: 80%;
   }
+
   .features,
   .statistics,
   .about {
-    width: 90%;
+    width: 70%;
   }
   .statistics__box {
     flex-direction: column;
@@ -623,6 +638,40 @@ h3 {
   .statistics__item {
     text-align: center;
     margin: 2rem 0;
+  }
+
+  .features__bookmark-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .about__item--header {
+    flex-direction: column;
+  }
+  .about__item--header .item-pledge {
+    margin-left: 0;
+    margin-top: .6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .navigation {
+    display: none;
+  }
+
+  .header {
+    height: 70vh;
+    background-image: url(images/image-hero-mobile.jpg);
+  }
+
+  .sidebar {
+    display: inline-block;
+  }
+
+  .features,
+  .statistics,
+  .about {
+    width: 90%;
   }
 
   .features__bookmark .cta, .cta__bookmark {
@@ -643,15 +692,7 @@ h3 {
     transform: translateX(5%);
   }
 
-  .about__item--header {
-    flex-direction: column;
-  }
-  .about__item--header .item-pledge {
-    margin-left: 0;
-    margin-top: .6rem;
-  }
 }
-
 
 
 
