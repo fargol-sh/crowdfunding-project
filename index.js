@@ -11,7 +11,10 @@ let totalBackers = document.querySelector('.statistics__item--total-backers');
 let successModal = document.querySelector('.success-modal');
 let successModalContent = document.querySelector('.success-modal__content');
 let successModalBtn = document.querySelector('.success-modal__btn');
-
+let navIcon = document.querySelector('.sidebar-icon');
+let closeNavIcon = document.querySelector('.mobile-nav__icon-box');
+let mobileNav = document.querySelector('.mobile-nav');
+let mobileNavContent = document.querySelector('.mobile-nav__content');
 
 
 const closeBtpHandler = function() {
@@ -81,6 +84,24 @@ const footerBtnHandler = function(k) {
   } , 500);
 }
 
+const openNavHandler = function() {
+  mobileNav.style.opacity = 1;
+  mobileNav.style.visibility = 'visible';
+  mobileNavContent.style.opacity = 1;
+  // mobileNavContent.style.transform = 'scale(1)';
+  navIcon.style.display = 'none';
+  // closeNavIcon.style.visibility = 'visible';
+}
+
+const closeNavHandler = function() {
+  mobileNav.style.opacity = 0;
+  mobileNav.style.visibility = 'hidden';
+  mobileNavContent.style.opacity = 0;
+  // mobileNavContent.style.transform = 'scale(.95)';
+  navIcon.style.display = 'block';
+  // closeNavIcon.style.visibility = 'hidden';
+}
+
 document.querySelector('.cta__back-this-project').addEventListener('click', openBtpHandler);
 
 document.querySelector('.btp-overlay__icon').addEventListener('click', closeBtpHandler);
@@ -96,7 +117,8 @@ for(let k = 0; k < continueBtns.length; k++) {
 
 successModalBtn.addEventListener('click', closeSuccessModalHandler);
 
-
+navIcon.addEventListener('click', openNavHandler);
+closeNavIcon.addEventListener('click', closeNavHandler);
 
 
 
