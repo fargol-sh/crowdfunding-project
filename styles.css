@@ -318,11 +318,13 @@ h3 {
 .cta__reward:link,
 .cta__reward:visited {
   text-align: center;
-  width: 10.5rem;
-  height: 3rem;
+  width: 11rem;
+  height: 3.3rem;
+  padding: 1rem 2rem;
   background-color: hsl(176, 50%, 47%);
   color: #fff;
-  font-size: .8rem;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .cta__reward:hover {
@@ -474,6 +476,10 @@ h3 {
   position: absolute;
   top: 1rem;
   right: 1.5rem;
+}
+
+.btp-overlay__item--number2 {
+  display: none;
 }
 
 .btp-overlay__item--text-box {
@@ -710,9 +716,19 @@ h3 {
   .about__item--header {
     flex-direction: column;
   }
+
   .about__item--header .item-pledge {
     margin-left: 0;
     margin-top: .6rem;
+  }
+
+  .btp-overlay__content {
+    width: 70%;
+    transform: translate(21.5%, 10%) scale(1) !important;
+  }
+
+  .success-modal__content {
+    width: 70%;
   }
 }
 
@@ -737,9 +753,6 @@ h3 {
 
   .sidebar {
     top: 7%;
-  }
-
-  .sidebar {
     display: inline-block;
   }
 
@@ -771,6 +784,35 @@ h3 {
     transform: translateX(5%);
   }
 
+  .btp-overlay__content {
+    width: 90%;
+    transform: translate(5.5%, 10%) scale(1) !important;
+  }
+
+  .btp-overlay__item--header {flex-direction: column;}
+  .btp-item-pledge {margin: .5rem 4.5rem;}
+  .btp-overlay__item--number {
+    display: none;
+  }
+
+  .btp-overlay__item--number2 {
+    display: block;
+    transform: translate(2rem, 0);
+    margin-bottom: 1rem;
+  }
+
+  .btp-overlay__item--footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btp-overlay__item--footer-submit {
+    margin-top: 0;
+  }
+
+  .success-modal__content {
+    width: 90%;
+  }
 }
 
 
