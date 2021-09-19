@@ -80,6 +80,8 @@ h3 {
   display: none;
   cursor: pointer;
   z-index: 1001;
+  transform: scale(1);
+  transition: all .5s ease;
 }
 
 .sidebar-icon {
@@ -305,7 +307,8 @@ h3 {
   justify-content: space-between;
 }
 
-.item-number {
+.item-number,
+.btp-item-number {
   margin-top: .5rem;
 }
 .items-left {
@@ -495,6 +498,7 @@ h3 {
   transform: scale(0);
   border-top: .1px solid #CDCDCD;
   transition: all .5s;
+  position: relative;
 
   display: flex;
   justify-content: space-between;
@@ -535,6 +539,14 @@ h3 {
   width: 6rem;
   height: 3rem;
   padding-left: 1.8rem;
+  transition: all .3s;
+}
+
+.btp-overlay__item--footer-pledge:focus,
+.btp-overlay__item--footer-pledge:active{
+  outline: none;
+  border: .1px solid #000;
+  border-radius: 100rem;
 }
 
 .btp-overlay__item--footer-pledge::placeholder { color: hsl(0, 0%, 48%);}
@@ -552,7 +564,15 @@ h3 {
 }
 
 .btp-overlay__item--footer-button:hover { background-color: hsl(176, 72%, 28%);}
-
+.btp-overlay__item--error-message {
+  position: absolute;
+  transform: translate(180%, 490%);
+  color: red;
+  font-family: "Commissioner";
+  font-size: .8rem;
+  margin: .5rem;
+  transition: all .3s;
+}
 
 /* SUCCESS MODAL */
 
@@ -619,38 +639,39 @@ h3 {
   left: 0;
   opacity: 0;
   visibility: hidden;
-  transition: all .3s ease;
+  transition: all .5s ease;
   background-color: rgba(0, 0, 0, .3);
   z-index: 1000;
 }
 
 .mobile-nav__icon-box {
   position: absolute;
-  top: 5%;
-  right: 6%;
+  top: 5.2%;
+  right: 6.3%;
   cursor: pointer;
   visibility: hidden;
   transform: scale(0);
+  transition: all .3s ease;
 }
 
 .mobile-nav__icon {
   fill: #fff;
   width: 1.8rem;
   height: 1.8rem;
-  transition: all .3s;
+  transition: all .5s ease;
 }
 
 .mobile-nav__content {
   overflow: hidden;
   position: absolute;
   top: 20%;
-  left: 12%;
+  left: 5%;
   background-color: #fff;
   border-radius: 5px;
   width: 90%;
   transform: translate(-7.8%, -5%);
   opacity: 0;
-  transition: all .5s ease-out;
+  transition: all .5s ease;
 }
 
 .mobile-nav__item {
@@ -810,6 +831,9 @@ h3 {
     margin-top: 0;
   }
 
+  .btp-overlay__item--error-message {
+    transform: translate(0, 870%);
+  }
   .success-modal__content {
     width: 90%;
   }
