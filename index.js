@@ -1,7 +1,8 @@
 let btpOverlay = document.querySelector('.btp-overlay');
 let btpOverlayContent = document.querySelector('.btp-overlay__content');
 //const homepageAddress = document.getElementById('btp-overlay'); // change the url address later
-let items = document.getElementsByClassName('btp-overlay__item');
+let items = document.querySelectorAll('.about__item');
+let btpItems = document.getElementsByClassName('btp-overlay__item');
 let radioBtns = document.getElementsByClassName('btp-overlay__item--radio-input');
 let itemFooter = document.getElementsByClassName('btp-overlay__item--footer');
 let continueBtns = document.getElementsByClassName('btp-overlay__item--footer-button');
@@ -18,7 +19,31 @@ let mobileNavContent = document.querySelector('.mobile-nav__content');
 let errorMessage = document.querySelectorAll('.btp-overlay__item--error-message');
 let itemNumbers = document.querySelectorAll('.item-number');
 let btpItemNumbers = document.querySelectorAll('.btp-item-number');
+let ctaRewards = document.querySelectorAll('.cta__reward');
+let statistics = document.querySelector('.statistics');
+let statisticsUserProgress = document.querySelector('.statistics__user-progress');
 
+
+const userProgressHandler = function() {
+  // setTimeout(() => {
+  //   statisticsUserProgress.style.width = '1%';
+  // }, 400);  ---> bug
+  statisticsUserProgress.style.width = (parseInt(raisedMoney.innerHTML.replace(/[^0-9]/g, '')) / 100000 * 100).toString() + '%';
+}
+
+userProgressHandler();
+
+const statisticsHandler = function() {
+  setTimeout(() => {
+    statistics.scrollIntoView({behavior: 'smooth'});
+  }, 500);
+  userProgressHandler();
+}
+
+const ctaRewardsHandler = function(j) {
+  openBtpHandler();
+  btpItems[j + 1].scrollIntoView({behavior: 'smooth'});
+}
 
 const closeBtpHandler = function() {
   btpOverlay.style.opacity = 0;
@@ -42,14 +67,14 @@ const footerHandler = function() {
       itemFooter[i].style.width = 'auto';
       itemFooter[i].style.height = 'auto';
       itemFooter[i].style.transform = 'scale(1)';
-      items[i].style.border = '.1px solid hsl(176, 50%, 47%)';
+      btpItems[i].style.border = '.1px solid hsl(176, 50%, 47%)';
 
     } else {
       itemFooter[i].style.visibility = 'hidden';
       itemFooter[i].style.width = 0;
       itemFooter[i].style.height = 0;
       itemFooter[i].style.transform = 'scale(0)';
-      items[i].style.border = '.1px solid #CDCDCD';
+      btpItems[i].style.border = '.1px solid #CDCDCD';
     }
   }
 }
@@ -64,6 +89,7 @@ const closeSuccessModalHandler = function() {
   successModal.style.visibility = 'hidden';
   successModalContent.style.opacity = 0;
   successModalContent.style.transform = 'translate(-50%, -50%) scale(0)';
+  statisticsHandler();
 }
 
 const footerBtnHandler = function(k) {
@@ -99,9 +125,18 @@ const footerBtnHandler = function(k) {
   totalBackers.innerHTML = (parseInt(totalBackers.innerHTML.replace(/[^0-9]/g, '')) + 1).toString();
 
   if(k !== 0) {
-    itemNumbers[k - 1].innerHTML = (parseInt(itemNumbers[k - 1].innerHTML) - 1).toString();
-    btpItemNumbers[k].innerHTML = (parseInt(btpItemNumbers[k].innerHTML) - 1).toString();
+    itemNumbers[k - 1].innerHTML = (parseInt(itemNumbers[k - 1].innerText) - 1).toString() + ' &nbsp;';
+    btpItemNumbers[2 * (k - 1)].innerHTML = (parseInt(btpItemNumbers[2 * (k - 1)].innerText) - 1).toString() + ' &nbsp;';
+    btpItemNumbers[2 * (k - 1) + 1].innerHTML = (parseInt(btpItemNumbers[2 * (k - 1) + 1].innerText) - 1).toString() + ' &nbsp;';
+    if(parseInt(itemNumbers[k - 1].innerHTML) === 0) {
+      items[k - 1].style.filter = 'opacity(50%)';
+      btpItems[k].style.filter = 'opacity(50%)';
+      items[k - 1].style.pointerEvents = 'none';
+      btpItems[k].style.pointerEvents = 'none';
+      ctaRewards[k - 1].innerHTML = 'Out of Stock';
+    }
   }
+
   closeBtpHandler();
   setTimeout(() => {
     for(let n = 0; n < inputPledge.length; n++) {
@@ -159,9 +194,9 @@ successModalBtn.addEventListener('click', closeSuccessModalHandler);
 navIcon.addEventListener('click', openNavHandler);
 closeNavIcon.addEventListener('click', closeNavHandler);
 
-
-
-
+for(let j = 0;j < ctaRewards.length; j++) {
+  ctaRewards[j].addEventListener('click', ctaRewardsHandler.bind(this, j));
+}
 
 
 ////
