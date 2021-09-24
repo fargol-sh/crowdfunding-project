@@ -22,6 +22,8 @@ let btpItemNumbers = document.querySelectorAll('.btp-item-number');
 let ctaRewards = document.querySelectorAll('.cta__reward');
 let statistics = document.querySelector('.statistics');
 let statisticsUserProgress = document.querySelector('.statistics__user-progress');
+let ctaBookmark = document.querySelector('.cta__bookmark');
+let featuresBookmarkIcon = document.querySelector('.features__bookmark-icon circle')
 
 
 const userProgressHandler = function() {
@@ -176,6 +178,18 @@ const closeNavHandler = function() {
   }, 400);
 }
 
+const ctaBookmarkHandler = function(event) {
+  if(event.target.classList.contains('cta__bookmarked')) {
+    event.target.classList.toggle('cta__bookmarked');
+    event.target.innerHTML = 'Bookmark';
+    featuresBookmarkIcon.style.fill = '#2F2F2F';
+  } else {
+    event.target.classList.toggle('cta__bookmarked');
+    event.target.innerHTML = 'Bookmarked';
+    featuresBookmarkIcon.style.fill = 'hsl(176, 50%, 47%)';
+  }
+}
+
 document.querySelector('.cta__back-this-project').addEventListener('click', openBtpHandler);
 
 document.querySelector('.btp-overlay__icon').addEventListener('click', closeBtpHandler);
@@ -198,5 +212,5 @@ for(let j = 0;j < ctaRewards.length; j++) {
   ctaRewards[j].addEventListener('click', ctaRewardsHandler.bind(this, j));
 }
 
-
+ctaBookmark.addEventListener('click', ctaBookmarkHandler);
 ////
