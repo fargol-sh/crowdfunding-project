@@ -22,7 +22,7 @@ let btpItemNumbers = document.querySelectorAll('.btp-item-number');
 let ctaRewards = document.querySelectorAll('.cta__reward');
 let statistics = document.querySelector('.statistics');
 let statisticsUserProgress = document.querySelector('.statistics__user-progress');
-let ctaBookmark = document.querySelector('.cta__bookmark');
+let ctaBookmark = document.querySelector('.features__bookmark');
 let featuresBookmarkIcon = document.querySelector('.features__bookmark-icon circle')
 
 
@@ -182,10 +182,12 @@ const ctaBookmarkHandler = function(event) {
   if(event.target.classList.contains('cta__bookmarked')) {
     event.target.classList.toggle('cta__bookmarked');
     event.target.innerHTML = 'Bookmark';
+    // ctaBookmark.classList.toggle('features__bookmarked');
     featuresBookmarkIcon.style.fill = '#2F2F2F';
   } else {
     event.target.classList.toggle('cta__bookmarked');
     event.target.innerHTML = 'Bookmarked';
+    // ctaBookmark.classList.toggle('features__bookmarked');
     featuresBookmarkIcon.style.fill = 'hsl(176, 50%, 47%)';
   }
 }

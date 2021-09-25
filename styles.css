@@ -146,6 +146,12 @@ h3 {
   position: relative;
 }
 
+.clearfix::after {
+  content: " ";
+  clear: both;
+  display: table;
+}
+
 .cta__back-this-project {
   height: 3.5rem;
   background-color: hsl(176, 50%, 47%);
@@ -173,7 +179,7 @@ h3 {
 }
 
 .cta__bookmark:hover ~ .features__bookmark-icon circle {
-  fill: #5F5F5F !important;
+  fill: #3E3E3E !important;
 }
 
 .cta__bookmarked:link,
@@ -193,6 +199,10 @@ h3 {
 .cta__bookmarked:hover ~ .features__bookmark-icon circle {
   fill: hsl(176, 72%, 28%) !important;
 }
+
+/* .features__bookmarked:hover ~ .features__bookmark-icon circle {
+  fill: hsl(176, 72%, 28%) !important; //bug : hover state under 600px doesn't work, i know why, but i don't know the fix :/
+} */
 
 .features__bookmark {
   display: inline-block;
