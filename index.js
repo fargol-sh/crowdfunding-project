@@ -1,6 +1,5 @@
 let btpOverlay = document.querySelector('.btp-overlay');
 let btpOverlayContent = document.querySelector('.btp-overlay__content');
-//const homepageAddress = document.getElementById('btp-overlay'); // change the url address later
 let items = document.querySelectorAll('.about__item');
 let btpItems = document.getElementsByClassName('btp-overlay__item');
 let radioBtns = document.getElementsByClassName('btp-overlay__item--radio-input');
@@ -23,7 +22,12 @@ let ctaRewards = document.querySelectorAll('.cta__reward');
 let statistics = document.querySelector('.statistics');
 let statisticsUserProgress = document.querySelector('.statistics__user-progress');
 let ctaBookmark = document.querySelector('.features__bookmark');
-let featuresBookmarkIcon = document.querySelector('.features__bookmark-icon circle')
+let featuresBookmarkIcon = document.querySelector('.features__bookmark-icon circle');
+let navItems = document.querySelectorAll('.nav-item__text');
+let mobileNavItems = document.querySelectorAll('.mobile-nav__item-text');
+let getStartedSection = document.querySelector('.features');
+let discoverSection = document.querySelector('.statistics');
+let aboutSection = document.querySelector('.about');
 
 
 const userProgressHandler = function() {
@@ -123,8 +127,8 @@ const footerBtnHandler = function(k) {
     errorMessage[m].innerHTML = '';
     inputPledge[m].style.border = '.1px solid #CDCDCD';
   }
-  raisedMoney.innerHTML = '$' + (parseInt(raisedMoney.innerHTML.replace(/[^0-9]/g, '')) + parseInt(inputPledge[k].value)).toString();
-  totalBackers.innerHTML = (parseInt(totalBackers.innerHTML.replace(/[^0-9]/g, '')) + 1).toString();
+  raisedMoney.innerHTML = '$' + (parseInt(raisedMoney.innerHTML.replace(/[^0-9]/g, '')) + parseInt(inputPledge[k].value)).toLocaleString();
+  totalBackers.innerHTML = (parseInt(totalBackers.innerHTML.replace(/[^0-9]/g, '')) + 1).toLocaleString();
 
   if(k !== 0) {
     itemNumbers[k - 1].innerHTML = (parseInt(itemNumbers[k - 1].innerText) - 1).toString() + ' &nbsp;';
@@ -192,6 +196,29 @@ const ctaBookmarkHandler = function(event) {
   }
 }
 
+const navItemsHandler = function(z) {
+  if(z === 0) {
+    aboutSection.scrollIntoView({behavior: 'smooth'});
+  } else if(z === 1) {
+    discoverSection.scrollIntoView({behavior: 'smooth'});
+  } else {
+    getStartedSection.scrollIntoView({behavior: 'smooth'});
+  }
+}
+
+const mobileNavItemsHandler = function(z) {
+  closeNavHandler();
+  setTimeout(() => {
+    if(z === 0) {
+      aboutSection.scrollIntoView({behavior: 'smooth'});
+    } else if(z === 1) {
+      discoverSection.scrollIntoView({behavior: 'smooth'});
+    } else {
+      getStartedSection.scrollIntoView({behavior: 'smooth'});
+    }
+  }, 600);
+}
+
 document.querySelector('.cta__back-this-project').addEventListener('click', openBtpHandler);
 
 document.querySelector('.btp-overlay__icon').addEventListener('click', closeBtpHandler);
@@ -215,4 +242,21 @@ for(let j = 0;j < ctaRewards.length; j++) {
 }
 
 ctaBookmark.addEventListener('click', ctaBookmarkHandler);
+
+for(let z = 0; z < navItems.length; z++) {
+  navItems[z].addEventListener('click', navItemsHandler.bind(this, z));
+  mobileNavItems[z].addEventListener('click', mobileNavItemsHandler.bind(this, z));
+}
+
+
+
+
+
+
+
+
+
+
+
+
 ////

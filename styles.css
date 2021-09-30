@@ -105,6 +105,7 @@ h3 {
   color: #fff;
   text-decoration: none;
   transition: all .3s;
+  cursor: pointer;
 }
 
 .nav-item__text:hover {
@@ -144,12 +145,6 @@ h3 {
 .features__btns {
   height: 60px;
   position: relative;
-}
-
-.clearfix::after {
-  content: " ";
-  clear: both;
-  display: table;
 }
 
 .cta__back-this-project {
@@ -416,14 +411,14 @@ h3 {
   top: 2.2rem;
 }
 
-.btp-overlay__icon-close {
+.btp-overlay__icon-close path{
   cursor: pointer;
   transition: all .2s;
 }
 
-/* .btp-overlay__icon-close:hover {
-  fill: #000;
-} */
+.btp-overlay__icon-close:hover path {
+  opacity: 1;
+}
 
 .btp-overlay__header {
   margin: 2rem 2rem 0 2rem;
@@ -717,7 +712,7 @@ h3 {
   width: 90%;
   transform: translate(-7.8%, -5%);
   opacity: 0;
-  transition: all .5s ease;
+  transition: opacity .5s ease;
 }
 
 .mobile-nav__item {
@@ -734,6 +729,7 @@ h3 {
   font-weight: 500;
   font-size: 1.5rem;
   color: #000;
+  cursor: pointer;
 }
 
 
@@ -882,6 +878,8 @@ h3 {
   }
 }
 
-
+@media (min-width: 600px) {
+  .sidebar {display: none !important}
+}
 
 /**/
